@@ -84,6 +84,21 @@ color:#db8e9c;
 
 }
 
+.button {
+
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #d14b63;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  width: 200px;
+  cursor: pointer;
+  margin: 5px;
+
+}
+
 
 </style>
 
@@ -96,10 +111,38 @@ color:#db8e9c;
 <img class="iotd" src="images/HHKB240MPW07262017.png"/>
 <h5 class="subtext"> Posted by '40 minutes per word' on 07/26/2017 in #kb-yourpics </h5>
 
-<h5 class="subtext"> Welcome to this really cool audio stream, if you don't like it,
-  yell at me in #music-discussion and I'll play whichever song you think is way better than the garbage I'm playing, okay thanks enjoy your stay, bye <3333 <video class="musicplayer" controls autoplay name="media">
-  <source src="http://64.30.69.209:56923/content/psc.mp3" type="audio/mpeg">
-</video> </h5>
+<h5 class="subtext"> Welcome to this really cool audio stream, have fun <3333 </h5>
+
+  <div style="text-align:center">
+    <button class="button" onclick="playPause()">Wait a minute, I gotta do a thing.</button>
+    <button class="button" onclick="muteAudio()">Hold on, turn that down, I can't see.</button>
+    <button class="button" onclick="unmuteAudio()">Okay, we good, crank it baby.</button>
+    <br><br>
+    <audio id="radio" class="musicplayer" autoplay name="media">
+    <source src="http://64.30.69.209:56923/content/psc.mp3" type="audio/mpeg">
+  </audio>
+  </div>
+
+  <script>
+  var myVideo = document.getElementById("radio");
+
+  function playPause() {
+      if (myVideo.paused)
+          myVideo.play();
+      else
+          myVideo.pause();
+  }
+
+  function muteAudio() {
+      myVideo.volume = 0.0;
+    }
+
+    function unmuteAudio() {
+        myVideo.volume = 1.0;
+      }
+
+  </script>
+
 
 <div class="info">
 
